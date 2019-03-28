@@ -1,0 +1,46 @@
+append content
+block content
+	//* eslint-disable */
+	.content
+		.content-first
+			.block-img
+				#app
+					label.upload-picture(:class="{'bg-none': imgSrc === ''}" for="upload")
+						img(:src="imgSrc" v-if="imgSrc !== ''")
+						div.base(:class="imgSrc === '' ? 'bg-upload' : 'can-edit'")
+					input(type="file" v-on:change="uploadfile" id='upload')
+			mixin contact-input(name, id)
+					input(class='contact-input', placeholder = name, id = id)
+			.block-contact
+				+contact-input('Имя', 'name')
+				+contact-input('Дата рождения', 'date')
+				+contact-input('Город', 'city')
+				+contact-input('Контактные данные', 'phone')
+			.approved
+		.content-second
+			p Навыки
+			.skills-block
+				- var values = ['Html5', 'sass', 'vanillajs', 'git', 'css3', 'less', 'angular', 'foundation', 'бэм', 'gulp', 'jquery', 'bootstrap'];
+				.skills
+					each val, index  in values
+						.skills-item(data-value=val)
+							input(type='checkbox', class="inputcheck", id='input '+index)
+							label.skills-checkbox(for='input '+index)
+								span
+									svg(width="12px" height="10px" viewbox="0 0 12 10")
+										polyline(points="1.5 6 4.5 9 10.5 1")
+								span= val
+		.grid-x.grid-margin-x.content-third
+			.content-third-block1.medium-4.cell
+				.content-svg
+					svg(class="typeRange" height="175" width="320" view-box="0 0 320 175")
+						g.scale(stroke="red")
+						path.arc.cls-1.chart-color1(d="M-0.012,99.9A125.712,125.712,0,0,1,49.164.26L84.006,42.609C65.348,57.249,55.578,74.557,55.578,99.9H-0.012Z" transform="translate(20,60)")
+						path.arc.cls-1.chart-color2(d="M0.124,23.961a127.06,127.06,0,0,1,145.817,0L111.423,67c-14.684-9.917-26.3-12.2-38.387-12.2C60.98,54.8,46.848,59.155,34.684,67Z" transform="translate(80,30)")
+						path.arc.cls-1.chart-color3(d="M34.248,0.26A126.875,126.875,0,0,1,82.04,99.9H28.053c0-25.343-10.4-43.4-27.486-57.291Z" transform="translate(200,60)")
+						polygon.needle(points="M -13.365097862825518 -6.809857496093201 L 40.85914497655921 -80.19058717695312 L 13.365097862825518 6.8098574960932")
+						circle.svg-circle(cx="160" cy="159" r="12")
+					.output 0
+					input(type="hidden" class="initialValue" value="0")
+			.content-third-block2.cell.medium-4
+				p Мой уровень владения Java Script

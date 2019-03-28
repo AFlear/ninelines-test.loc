@@ -1,0 +1,22 @@
+/* woff */
+
+@font-face {
+	font-family: 'RobotoRegular';
+	src: url('RobotoRegular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RobotoMedium';
+	src: url('RobotoMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RobotoBold';
+	src: url('RobotoBold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
